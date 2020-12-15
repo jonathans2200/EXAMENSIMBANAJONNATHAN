@@ -25,6 +25,7 @@ public  List<Libro> listar(){
 }
 
 public Libro buscarLibro(int codigo) {
-	return em.find(Libro.class, codigo);
+	Libro l= em.find(Libro.class, codigo);
+return l;
 }
 }

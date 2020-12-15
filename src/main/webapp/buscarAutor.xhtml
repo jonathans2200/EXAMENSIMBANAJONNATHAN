@@ -7,29 +7,24 @@
 <h:head></h:head>
 <body>
 
-	<h:panelGrid columns="2">
-		<h:outputLabel value="INGRESE EL CODIGO DEL LIBRO A BUSCAR" />
-		<h:inputText value="" />
-		<h:commandButton action="#{libroBean.doBuscarLibro()}" value="BUSCAR" />
-		
-		</h:panelGrid>
+	<h:outputLabel value="INGRESE EL CODIGO DEL LIBRO" />
+	<h:inputText value="#{libroBean.codLibro}" id="codigo" />
+	<h:commandButton action="#{libroBean.doBuscarLibro(libroBean.codLibro)}" value="BUSCAR" />
+	<h:dataTable value="#{libroBean.loadLibros()}" var="libro">
+<h:column>
+<f:facet name="Codigo"></f:facet>
+#{libro.codigo}
+</h:column>
+<h:column>
+<f:facet name="Codigo"></f:facet>
+#{libro.titulo}
+</h:column>
+<h:column>
+<f:facet name="Codigo"></f:facet>
+#{libro.anoEdicion}
+</h:column>
 
-<h:dataTable>
-<table>
-<tbody>
-<tr>
-<td>CODIGO</td>
-<td>TITULO</td>
-<td>AÑO DE EDICION</td>
-
-
-
-</tr>
-</tbody>
-<tr>
-<td >fdsf</td>
-</tr>
-</table>
-</h:dataTable>
+	
+	</h:dataTable>
 </body>
 </html>

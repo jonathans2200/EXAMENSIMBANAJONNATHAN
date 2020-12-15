@@ -15,6 +15,7 @@ public class LibroON {
 
 	@Inject
 	private LibroDao daoLibro;
+	@Inject
 	private AutorDao daoAutor;
 	
 	public void guardarLibro(Libro libro) {
@@ -22,7 +23,8 @@ public class LibroON {
 	}
 
 public Libro buscarLibro(int codigoLibro) {
-	return daoLibro.buscarLibro(codigoLibro);
+ Libro l=daoLibro.buscarLibro(codigoLibro);
+return l;
 }
 
 public  List<Libro> listadoLibros(){

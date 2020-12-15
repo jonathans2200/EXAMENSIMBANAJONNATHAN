@@ -17,7 +17,15 @@ public class Libro implements Serializable{
 	private int idLibro;
 	private String codigo;
 	private String titulo;
-	
+	private Autor autor;
+	public Autor getAutor() {
+		return autor;
+	}
+
+	public void setAutor(Autor autor) {
+		this.autor = autor;
+	}
+
 	private String anoEdicion;
 
 	public int getIdLibro() {

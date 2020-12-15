@@ -19,7 +19,10 @@ public class Autor implements Serializable{
 	private int idAutor;
 	private String nombre;
 	private String apellido;
-
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_libro")
+	
+	private List<Libro> libro;
 	@Override
 	public String toString() {
 		return "Autor [idAutor=" + idAutor + ", nombre=" + nombre + ", apellido=" + apellido + ", libro=" + libro + "]";
@@ -57,8 +60,6 @@ public class Autor implements Serializable{
 		this.libro = libro;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_libro")
-	private List<Libro> libro;
+	
 
 }
